@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center" style="height: 100vh;">
-            <div class="col-4">
+            <div class="col-10 col-lg-4">
                 <h2 class="text-center mb-4">Registrasi Mahasiwa</h2>
                 <?php
                 include "../function.php";
@@ -64,7 +64,7 @@
                     <p class="my-3 text-end">Login <a href="../login/index.php">Disini</a></p>
                 </form>
             </div>
-            <div class="col-6">
+            <div class="col-6 d-none d-lg-block">
                 <img src="../img/hacker.png" width="100%" class="mx-auto" alt="...">
             </div>
         </div>

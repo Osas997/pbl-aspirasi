@@ -19,7 +19,7 @@ if (!isset($_SESSION["admin"])) {
 <body>
     <div class="container">
         <div class="row d-flex align-items-center justify-content-center" style="height: 100vh;">
-            <div class="col-4">
+            <div class="col-lg-4 col-10">
                 <h2 class="text-center mb-4">Tambah Petugas</h2>
                 <?php
                 if (isset($_POST["tambahPetugas"])) {
@@ -39,19 +39,19 @@ if (!isset($_SESSION["admin"])) {
                 ?>
                 <form action="" method="post">
                     <div class="mb-4">
-                        <input type="text" class="form-control" style="border-radius: 17px;" name="nama_petugas" placeholder="Masukkan Nama Lengkap">
+                        <input type="text" class="form-control" required style="border-radius: 17px;" name="nama_petugas" placeholder="Masukkan Nama Lengkap">
                     </div>
                     <div class="mb-4">
-                        <input type="text" class="form-control" style="border-radius: 17px;" name="username_ptgs" placeholder="Masukkan Username">
+                        <input type="text" class="form-control" required style="border-radius: 17px;" name="username_ptgs" placeholder="Masukkan Username">
                     </div>
                     <div class=" mb-4">
-                        <input type="password" class="form-control" style="border-radius: 17px;" name="password_ptgs" placeholder="Masukkan Password">
+                        <input type="password" class="form-control" required style="border-radius: 17px;" name="password_ptgs" placeholder="Masukkan Password">
                     </div>
                     <div class=" mb-4">
-                        <input type="password" class="form-control" style="border-radius: 17px;" name="konfirm" placeholder="Konfirmasi Password">
+                        <input type="password" class="form-control" required style="border-radius: 17px;" name="konfirm" placeholder="Konfirmasi Password">
                     </div>
                     <div class=" mb-4">
-                        <input type="text" class="form-control" style="border-radius: 17px;" name="no_hp_ptgs" placeholder="Masukkan Nomor Hp">
+                        <input type="text" class="form-control" required style="border-radius: 17px;" name="no_hp_ptgs" placeholder="Masukkan Nomor Hp">
                     </div>
                     <div class=" mb-4">
                         <select name="level" id="" required class="form-select">
@@ -62,8 +62,9 @@ if (!isset($_SESSION["admin"])) {
                     </div>
                     <button type="submit" name="tambahPetugas" class="btn btn-primary" style="border-radius: 17px; width: 100%;">Tambah Petugas</button>
                 </form>
+                <a class="my-4 d-block text-decoration-none" href="halaman_admin.php">Kembali</a>
             </div>
-            <div class="col-6">
+            <div class="col-lg-6 d-none d-lg-block">
                 <img src="../img/cool.png" width="100%" class="mx-auto" alt="...">
             </div>
         </div>

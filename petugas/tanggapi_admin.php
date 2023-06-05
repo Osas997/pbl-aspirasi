@@ -19,6 +19,7 @@ if (!isset($_SESSION["admin"])) {
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    <link rel="stylesheet" href="../css/style.css">
    <link rel="shortcut icon" href="../img/LOGO HMJTI2.png" type="image/x-icon">
+   <script src="https://unpkg.com/feather-icons"></script>
    <title>Tanggapi Pengaduan</title>
 </head>
 
@@ -30,7 +31,7 @@ if (!isset($_SESSION["admin"])) {
             <div class="logo-img">
                <img class="img-poli" src="../img/LOGO HMJTI2.png" alt="">
             </div>
-            <a href="../index.php" class="fs-3 fw-bolder mt-2 text-light">POLIWANGI</a>
+            <a href="../index.php" class="fs-3 poli fw-bolder mt-2 text-light">POLIWANGI</a>
          </div>
          <div class="link">
             <ul>
@@ -40,6 +41,9 @@ if (!isset($_SESSION["admin"])) {
                   </svg><a href="../logout.php">Logout</a></li>
             </ul>
          </div>
+         <li class="hamburg" id="hamburger-menu">
+            <a><i data-feather="menu"></i></a>
+         </li>
       </div>
    </nav>
    <!-- end navbar -->

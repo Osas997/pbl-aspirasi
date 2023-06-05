@@ -19,6 +19,7 @@ if (!isset($_SESSION["mhs"])) {
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    <link rel="stylesheet" href="css/style.css">
    <link rel="shortcut icon" href="img/LOGO HMJTI2.png" type="image/x-icon">
+   <script src="https://unpkg.com/feather-icons"></script>
    <title>Pengaduan Mahasiswa</title>
 </head>
 
@@ -30,7 +31,7 @@ if (!isset($_SESSION["mhs"])) {
             <div class="logo-img">
                <img class="img-poli" src="img/LOGO HMJTI2.png" alt="">
             </div>
-            <h3 class="fs-3 fw-bolder mt-2 text-light">POLIWANGI</h3>
+            <h3 class="fs-3 poli fw-bolder mt-2 text-light">POLIWANGI</h3>
          </div>
          <div class="link">
             <ul>
@@ -47,6 +48,9 @@ if (!isset($_SESSION["mhs"])) {
                   </svg><a href="logout.php">Logout</a></li>
             </ul>
          </div>
+         <li class="hamburg" id="hamburger-menu">
+            <a><i data-feather="menu"></i></a>
+         </li>
       </div>
    </nav>
    <!-- end navbar -->
@@ -57,13 +61,13 @@ if (!isset($_SESSION["mhs"])) {
          <div class="bgr-black">
             <div class="container">
                <div class="hero">
-                  <div class="teks text-light">
+                  <div class="teks text-light w-100">
                      <?php
                      $dataMhs = getUser();
                      ?>
-                     <h1>Selamat Datang <?= $dataMhs["nama_mahasiswa"] ?></h1>
-                     <h1>Di Web Aspirasi Mahasiswa</h1>
-                     <h3>Lihat Pengaduan Disini</h3>
+                     <h1 class="selamat text-start">Selamat Datang <?= $dataMhs["nama_mahasiswa"] ?></h1>
+                     <h1 class="selamat text-start">Di Web Aspirasi Mahasiswa</h1>
+                     <h3 class="text-hero text-md-start">Lihat Pengaduan Disini</h3>
                      <button class="btn-tod fs-6">Mahasiswa</button>
                   </div>
                </div>
@@ -85,35 +89,37 @@ if (!isset($_SESSION["mhs"])) {
       </div>
       <div class="container">
          <?php if (!empty($dataPengaduan)) { ?>
-            <table class="table table-striped">
-               <thead class="bg-light">
-                  <tr>
-                     <th>No</th>
-                     <th class="waktu-pengaduan">Waktu Pengaduan</th>
-                     <th class="isi-laporan">Isi Laporan</th>
-                     <th>Status</th>
-                     <th></th>
-                     <th class="text-center">Aksi</th>
-                  </tr>
-               </thead>
-               <tbody>
-                  <?php
-                  $no = 1;
-                  foreach ($dataPengaduan as $pengaduan) { ?>
+            <div class="table-responsive">
+               <table class="table table-striped">
+                  <thead class="bg-light">
                      <tr>
-                        <td><?= $no++ ?></td>
-                        <td><?= $pengaduan["waktu_pengaduan"] ?></td>
-                        <td><?= $pengaduan["isi_laporan"] ?></td>
-                        <td><?= $pengaduan["status"] ?></td>
-                        <td class="text-center"><a class="btn btn-warning" href="detail_pengaduan.php?id=<?= $pengaduan["id_pengaduan"] ?>">Lihat Detail</a></td>
-                        <td class="text-center">
-                           <a class="btn btn-warning" href="lihat_tanggapan.php?id=<?= $pengaduan['id_pengaduan'] ?>">Lihat Tanggapan</a>
-                           <a class="btn btn-danger" onclick="return confirm('Yakin Hapus??')" href="hapus_pengaduan.php?id=<?= $pengaduan['id_pengaduan'] ?>">Hapus</a>
-                        </td>
+                        <th>No</th>
+                        <th class="waktu-pengaduan">Waktu Pengaduan</th>
+                        <th class="isi-laporan">Isi Laporan</th>
+                        <th>Status</th>
+                        <th></th>
+                        <th class="text-center">Aksi</th>
                      </tr>
-                  <?php } ?>
-               </tbody>
-            </table>
+                  </thead>
+                  <tbody>
+                     <?php
+                     $no = 1;
+                     foreach ($dataPengaduan as $pengaduan) { ?>
+                        <tr>
+                           <td><?= $no++ ?></td>
+                           <td><?= $pengaduan["waktu_pengaduan"] ?></td>
+                           <td><?= $pengaduan["isi_laporan"] ?></td>
+                           <td><?= $pengaduan["status"] ?></td>
+                           <td class="text-center"><a class="btn btn-warning" href="detail_pengaduan.php?id=<?= $pengaduan["id_pengaduan"] ?>">Lihat Detail</a></td>
+                           <td class="text-center">
+                              <a class="btn btn-warning" href="lihat_tanggapan.php?id=<?= $pengaduan['id_pengaduan'] ?>">Lihat Tanggapan</a>
+                              <a class="btn btn-danger hapus" onclick="return confirm('Yakin Hapus??')" href="hapus_pengaduan.php?id=<?= $pengaduan['id_pengaduan'] ?>">Hapus</a>
+                           </td>
+                        </tr>
+                     <?php } ?>
+                  </tbody>
+               </table>
+            </div>
          <?php } else { ?>
             <h3 class="text-center fw-bold text-danger">Belum Ada Pengaduan</h3>
          <?php } ?>

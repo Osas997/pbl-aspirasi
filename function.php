@@ -66,12 +66,12 @@ function Register($data)
       return 300;
    }
 
-   $queryInsert =  "INSERT into tb_mahasiswa VALUES ('','$nim', '$namaLengkap' , '$kelas' , '$password' ,'$noHp')";
+   $queryInsert =  "INSERT into tb_mahasiswa VALUES (NULL,'$nim', '$namaLengkap' , '$kelas' , '$password' ,'$noHp')";
    mysqli_query($conn, $queryInsert);
    return 1;
 }
 
-// Tambha petugas admin
+// Tambah petugas admin
 function tambahPetugas($data)
 {
    global $conn;
@@ -98,7 +98,7 @@ function tambahPetugas($data)
       return 300;
    }
 
-   $queryInsert =  "INSERT into tb_petugas VALUES ('','$nama', '$username' , '$password' , '$noHp' ,'$level')";
+   $queryInsert =  "INSERT into tb_petugas VALUES (NULL,'$nama', '$username' , '$password' , '$noHp' ,'$level')";
    mysqli_query($conn, $queryInsert);
    return 1;
 }
@@ -155,7 +155,7 @@ function buatPengaduan($data)
    $isiLaporan = $data["laporan"];
    $gambar = uploadGambar();
    $status = "Proses";
-   $queryInsert = "INSERT into tb_pengaduan VALUES ('','$idMhs','$tglPengaduan','$isiLaporan','$gambar','$status')";
+   $queryInsert = "INSERT into tb_pengaduan VALUES (NULL,'$idMhs','$tglPengaduan','$isiLaporan','$gambar','$status')";
    mysqli_query($conn, $queryInsert);
 }
 
@@ -213,7 +213,7 @@ function buatTanggapan($data)
    $waktuTanggapan = $data["tanggal"];
    $isiTanggapan = $data["tanggapan"];
 
-   $queryInsert = "INSERT INTO tb_tanggapan VALUES ('','$idPengaduan','$idPetugas','$waktuTanggapan','$isiTanggapan')";
+   $queryInsert = "INSERT INTO tb_tanggapan VALUES (NULL,'$idPengaduan','$idPetugas','$waktuTanggapan','$isiTanggapan')";
    mysqli_query($conn, $queryInsert);
 }
 

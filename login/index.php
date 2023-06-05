@@ -21,7 +21,7 @@ if (isset($_SESSION["mhs"])) {
 <body>
   <div class="container">
     <div class="row d-flex align-items-center justify-content-center" style="height: 100vh;">
-      <div class="col-3">
+      <div class="col-10 col-lg-3">
         <h2 class="text-center mb-4">Login Mahasiswa</h2>
         <?php
         if (isset($_POST["login"])) {
@@ -56,7 +56,7 @@ if (isset($_SESSION["mhs"])) {
           </div>
         </form>
       </div>
-      <div class="col-5">
+      <div class="col-5 d-none d-lg-block">
         <img src="../img/search.png" width="100%" class="mx-auto" alt="...">
       </div>
     </div>

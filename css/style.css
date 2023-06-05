@@ -192,13 +192,19 @@ a {
     font-size: 25px !important;
   }
 
+  .teks .selamat{
+    font-size: 2.3rem !important;
+    font-family: "Ubuntu";
+    font-weight: 600;
+  }
+
   .text-hero{
     font-size: 1.4rem !important;
   }
 
   .logo-img {
     margin-right: 10px;
-    width: 75px;
+    width: 70px;
   }
 
   .bgr-black {
@@ -240,5 +246,10 @@ a {
 
   .link.active{
     right: 0;
+  }
+
+  .hapus{
+    margin-top: 8px;
+    display: block;
   }
 }

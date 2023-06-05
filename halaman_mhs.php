@@ -19,6 +19,7 @@ if (!isset($_SESSION["mhs"])) {
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
    <link rel="stylesheet" href="css/style.css">
    <link rel="shortcut icon" href="img/LOGO HMJTI2.png" type="image/x-icon">
+   <script src="https://unpkg.com/feather-icons"></script>
    <title>Halaman Mahasiwa</title>
 </head>
 
@@ -30,7 +31,7 @@ if (!isset($_SESSION["mhs"])) {
             <div class="logo-img">
                <img class="img-poli" src="img/LOGO HMJTI2.png" alt="">
             </div>
-            <h3 class="fs-3 fw-bolder mt-2 text-light">POLIWANGI</h3>
+            <h3 class="fs-3 poli fw-bolder mt-2 text-light">POLIWANGI</h3>
          </div>
          <div class="link">
             <ul>
@@ -47,6 +48,9 @@ if (!isset($_SESSION["mhs"])) {
                   </svg><a href="logout.php">Logout</a></li>
             </ul>
          </div>
+         <li class="hamburg" id="hamburger-menu">
+            <a><i data-feather="menu"></i></a>
+         </li>
       </div>
    </nav>
    <!-- end navbar -->
@@ -61,10 +65,12 @@ if (!isset($_SESSION["mhs"])) {
                      <?php
                      $dataMhs = getUser();
                      ?>
-                     <h1>Selamat Datang <?= $dataMhs["nama_mahasiswa"] ?></h1>
-                     <h1>Di Web Aspirasi Mahasiswa</h1>
-                     <h3>Buat Pengaduan dan Pantau Statusnya dengan Mudah!</h3>
-                     <h3>Klik Buat Pengaduan dan Cek Pengaduan yang ada Di Navigasi</h3>
+                     <h1 class="selamat text-start">Selamat Datang <?= $dataMhs["nama_mahasiswa"] ?></h1>
+                     <h1 class="selamat text-start">Di Web Aspirasi Mahasiswa</h1>
+                     <div class="kata">
+                        <h3 class="text-hero text-start text-md-start">Buat Pengaduan dan Pantau Statusnya dengan Mudah!</h3>
+                        <h3 class="text-hero text-start text-md-start">Klik Buat Pengaduan dan Cek Pengaduan yang ada Di Navigasi</h3>
+                     </div>
                      <button class="btn-tod fs-6">Mahasiswa</button>
                   </div>
                </div>
