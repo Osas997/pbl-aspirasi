@@ -37,7 +37,7 @@
             </ul>
          </div>
          <li class="hamburg" id="hamburger-menu">
-            <a><i class="strip" data-feather="menu"></i></a>
+            <a><i data-feather="menu"></i></a>
          </li>
       </div>
    </nav>
